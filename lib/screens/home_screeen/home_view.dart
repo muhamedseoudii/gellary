@@ -230,8 +230,8 @@ class HomeView extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(16),
                                   child: Image.network(
                                     galleryController.images[index],
-                                    width: 100,
-                                    height: 100,
+                                    width: 100.w,
+                                    height: 100.h,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
