@@ -8,7 +8,6 @@ import 'package:my_gellary/component/buttom_custom.dart';
 import 'package:my_gellary/component/elliptical_gradient_painter.dart';
 import 'package:my_gellary/component/text_field_custom.dart';
 import 'package:my_gellary/features/controllers/login_controllers.dart';
-import 'package:my_gellary/screens/home_screeen/home_view.dart';
 import 'package:my_gellary/utils/app_text_styles.dart';
 
 class LoginView extends StatelessWidget {

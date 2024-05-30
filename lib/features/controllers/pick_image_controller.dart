@@ -23,6 +23,7 @@ class PickImageController extends GetxController {
     );
     if (pickedImage != null) {
       _image.value = File(pickedImage.path);
+      updateProfile();
     }
   }
 
@@ -31,6 +32,8 @@ class PickImageController extends GetxController {
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
       _image.value = File(pickedImage.path);
+      updateProfile();
+      print('image is ${pickedImage.path}');
     }
   }
 
@@ -42,8 +45,7 @@ class PickImageController extends GetxController {
       String token = prefs.getString('token') ?? '';
       client.FormData formData = client.FormData.fromMap({
         if (_image.value != null)
-          "profileImage": await client.MultipartFile.fromFile(
-              _image.value!.path,
+          "img": await client.MultipartFile.fromFile(_image.value!.path,
               contentType: MediaType('image', '')),
       });
       var response = await dio.post(
