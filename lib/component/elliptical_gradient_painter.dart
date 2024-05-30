@@ -6,8 +6,8 @@ class EllipticalGradientPainter extends CustomPainter {
     // Define the gradient
     final gradient = LinearGradient(
       colors: [Color(0xffDDCDFF), Color(0xffEA94D7)],
-      begin: Alignment.centerLeft,
-      end: Alignment.centerRight,
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
     );
 
     // Create a rect that fills the canvas
@@ -16,15 +16,8 @@ class EllipticalGradientPainter extends CustomPainter {
     // Create the paint with the gradient
     final paint = Paint()..shader = gradient.createShader(rect);
 
-    // Draw the ellipse with the gradient
-    final path = Path()
-      ..addOval(Rect.fromLTRB(
-        rect.left,
-        rect.top - (rect.height / 2),
-        rect.right,
-        rect.bottom + (rect.height / 2),
-      ));
-    canvas.drawPath(path, paint);
+    // Draw the rectangle with the gradient
+    canvas.drawRect(rect, paint);
   }
 
   @override
