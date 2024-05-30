@@ -33,7 +33,7 @@ class PickImageController extends GetxController {
     if (pickedImage != null) {
       _image.value = File(pickedImage.path);
       updateProfile();
-      print('image is ${pickedImage.path}');
+      // print('image is ${pickedImage.path}');
     }
   }
 
